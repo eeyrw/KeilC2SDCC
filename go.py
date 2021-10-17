@@ -32,6 +32,8 @@ for line in open(fname).readlines():
                 mapping[name] = eval(value)
             fout.write(r)
         else:
-            fout.write(line + '\n')
+            fout.write(line)
+    else:
+        fout.write(line)
 
 open(mapping_fname, 'wb').write(pickle.dumps(mapping, protocol=2))
